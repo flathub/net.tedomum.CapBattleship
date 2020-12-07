@@ -38,8 +38,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://forge.tedomum.net/captnfab/capbattleship/-/archive/v1.0alpha7/capbattleship-v1.0alpha7.tar.gz",
-                    "sha256": "8776cac244498fec3e760cafddae0569c31fc9c1bd084bf7392a1b1801662cef"
+                    "url": "https://forge.tedomum.net/cap-pirate-battleship/capbattleship/-/archive/v1.0alpha8/capbattleship-v1.0alpha8.tar.gz",
+                    "sha256": "76f4d350b33adb74f9701fff73980d577744b6bfd3275e9275cc7d5819663e4f"
                 },
                 {
                     "type": "patch",
