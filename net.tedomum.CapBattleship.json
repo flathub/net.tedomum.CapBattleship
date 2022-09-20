@@ -1,7 +1,7 @@
 {
     "app-id": "net.tedomum.CapBattleship",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "20.08",
+    "runtime-version": "22.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "capbattleship",
     "finish-args": [
@@ -9,6 +9,12 @@
         "--socket=fallback-x11",
         "--socket=pulseaudio",
         "--device=dri"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/python3.10/site-packages/pygame/docs",
+        "/lib/python3.10/site-packages/pygame/examples",
+        "/lib/python3.10/site-packages/pygame/tests"
     ],
     "modules": [
         {
@@ -20,8 +26,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://files.pythonhosted.org/packages/bc/0c/d164411381bada8feae57359aa9296defbed3035f4b55bef6a271cb0573c/pygame-2.0.0.tar.gz",
-                    "sha256": "63b038da116a643046181b02173fd894d87d2f85ecfd6aa7d5ece73c6ef501e9"
+                    "url": "https://files.pythonhosted.org/packages/9a/50/67767e5586a45e7e7b02e6f0e07853f8fcb81b54c66db6278f1a1344491f/pygame-2.1.2.tar.gz",
+                    "sha256": "d6d0eca28f886f0477cd0721ac688189155a587f2bb8eae740e52ca56c3ad23c"
                 },
                 {
                     "type": "patch",
