@@ -1,7 +1,7 @@
 {
     "app-id": "net.tedomum.CapBattleship",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "22.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "capbattleship",
     "finish-args": [
@@ -12,26 +12,41 @@
     ],
     "cleanup": [
         "/include",
-        "/lib/python3.10/site-packages/pygame/docs",
-        "/lib/python3.10/site-packages/pygame/examples",
-        "/lib/python3.10/site-packages/pygame/tests"
+        "/lib/python3.*/*/pygame/docs",
+        "/lib/python3.*/*/pygame/examples",
+        "/lib/python3.*/*/pygame/tests"
     ],
     "modules": [
+        "shared-modules/SDL2/SDL2_ttf.json",
+        "shared-modules/SDL2/SDL2_image.json",
         {
             "name": "python3-pygame",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --prefix=/app ."
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pygame\" --no-build-isolation"
             ],
+            "build-options": {
+                "env": {
+                    "PYGAME_EXTRA_BASE": "/app"
+                },
+                "arch": {
+                    "aarch64": {
+                        "env": {
+                            "ORIGLIBDIRS": "/lib:/lib64:/lib/aarch64-linux-gnu"
+                        }
+                    },
+                    "x86_64": {
+                        "env": {
+                            "ORIGLIBDIRS": "/lib:/lib64:/lib/x86_64-linux-gnu"
+                        }
+                    }
+                }
+            },
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://files.pythonhosted.org/packages/9a/50/67767e5586a45e7e7b02e6f0e07853f8fcb81b54c66db6278f1a1344491f/pygame-2.1.2.tar.gz",
-                    "sha256": "d6d0eca28f886f0477cd0721ac688189155a587f2bb8eae740e52ca56c3ad23c"
-                },
-                {
-                    "type": "patch",
-                    "path": "disable-portmidi.patch"
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/cc/08bba60f00541f62aaa252ce0cfbd60aebd04616c0b9574f755b583e45ae/pygame-2.6.1.tar.gz",
+                    "sha256": "56fb02ead529cee00d415c3e007f75e0780c655909aaa8e8bf616ee09c9feb1f"
                 }
             ]
         },
@@ -39,7 +54,7 @@
             "name": "capbattleship",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --prefix=/app ."
+                "pip3 install --no-build-isolation --prefix=/app ."
             ],
             "sources": [
                 {
