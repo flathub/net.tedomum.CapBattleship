@@ -1,0 +1,27 @@
+From 981848d64824185b2976499edff7685b560790de Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Fri, 10 Apr 2026 14:33:38 +0300
+Subject: [PATCH] Disable Repeat Background Music option
+
+Fixes: https://github.com/flathub/net.tedomum.CapBattleship/issues/2
+
+Signed-off-by: Sabri Ünal <yakushabb@gmail.com>
+---
+ capbattleship/pygameui.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/capbattleship/pygameui.py b/capbattleship/pygameui.py
+index 1ddff54..26aa8d2 100644
+--- a/capbattleship/pygameui.py
++++ b/capbattleship/pygameui.py
+@@ -199,7 +199,6 @@ class GuiOptions:
+                     (_("Disabled"),  BgRepeat.NONE),
+                     (_("Menu only"), BgRepeat.MENU),
+                     (_("Play once"), BgRepeat.ONCE),
+-                    (_("Repeat"),    BgRepeat.LOOP),
+                     ],
+                     "music"),
+                 (_("Sfx"), [
+--
+libgit2 1.7.2
+
