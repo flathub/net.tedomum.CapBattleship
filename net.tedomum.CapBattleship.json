@@ -1,7 +1,7 @@
 {
     "app-id": "net.tedomum.CapBattleship",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "25.08",
+    "runtime-version": "26.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "capbattleship",
     "finish-args": [
@@ -18,8 +18,10 @@
         "/lib/python3.*/*/pygame/tests"
     ],
     "modules": [
+        "SDL2.json",
         "shared-modules/SDL2/SDL2_ttf.json",
         "shared-modules/SDL2/SDL2_image.json",
+        "shared-modules/SDL2/SDL2_mixer.json",
         {
             "name": "python3-pygame",
             "buildsystem": "simple",
@@ -59,9 +61,10 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://forge.tedomum.net/cap-pirate-battleship/capbattleship/-/archive/v1.0alpha8/capbattleship-v1.0alpha8.tar.gz",
-                    "sha256": "76f4d350b33adb74f9701fff73980d577744b6bfd3275e9275cc7d5819663e4f"
+                    "type": "git",
+                    "url": "https://forge.tedomum.net/cap-pirate-battleship/capbattleship",
+                    "tag": "v1.0alpha8",
+                    "commit": "6fadd5ac97297b21be12ae7835e751e014a806ca"
                 },
                 {
                     "type": "patch",
