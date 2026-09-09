@@ -70,7 +70,8 @@
                     "type": "patch",
                     "paths": [
                         "usr-app.patch",
-                        "disable-repeat-background-music-option.patch"
+                        "disable-repeat-background-music-option.patch",
+                        "fix-appdata.patch"
                     ]
                 }
             ]
